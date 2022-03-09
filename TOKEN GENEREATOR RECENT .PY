@@ -1,0 +1,31 @@
+import random
+
+# main routine goes here 
+
+STARTING_BALANCE = 100
+
+balance = STARTING_BALANCE
+# Testing loop to generate 20 tokens 
+for item in range (0, 10 ):
+    chosen_num = random. randint(1,100) 
+
+    # Adjust balance 
+    if 1 <= chosen_num <= 5:
+        chosen = "unicorn"
+        balance += 4 
+    elif 6 <= chosen_num <= 36:
+        balance -= 1
+    else:
+        # if number is even, it's a horse
+        if chosen_num % 2 == 0:
+            chosen = "horse"
+
+        # if number is odd, it's a zebra
+        else:
+            chosen = "zebra"
+        balance -= 0.5 
+
+
+    print("you got a {}. Your balance is "
+            "${:.2f}".format(chosen, balance))
+    print()
